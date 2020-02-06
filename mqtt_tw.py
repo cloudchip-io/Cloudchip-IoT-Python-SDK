@@ -7,8 +7,8 @@ import random
 import paho.mqtt.client as mqtt
 
 # Platform credentials
-HOST = 'maker.cloudchip.io'
-TOKEN = '*****************'
+HOST    = 'www.cloudchip.io'
+TOKEN   = '**************'
 
 # Creating the varible to store telemetry and widget values
 telemetry = dict()
@@ -40,8 +40,8 @@ client.loop_start()
 while True:
     telemetry['sensor'] = random.randrange(1,99)
     client.publish('v1/devices/me/telemetry',json.dumps(telemetry), 1)
-    time.sleep(2)
     print(telemetry)
+    time.sleep(2)
     
 #client.disconnect() 
 
